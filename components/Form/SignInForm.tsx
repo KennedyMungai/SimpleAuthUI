@@ -72,7 +72,7 @@ const SignInForm = (props: Props) => {
             )}
           />
           <Button type="submit" className="w-full mt-2">
-            Submit
+            Sign In
           </Button>
         </div>
       </form>
