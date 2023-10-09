@@ -18,8 +18,13 @@ import Link from "next/link";
 type Props = {};
 
 const FormSchema = z.object({
-  email: z.string().email(),
-  password: z.string().min(8),
+  email: z
+    .string()
+    .email("Invalid Email")
+    .min(5, "At least 5 characters are required for the email"),
+  password: z
+    .string()
+    .min(8, "The password should not be less than 8 characters"),
 });
 
 const SignInForm = (props: Props) => {
