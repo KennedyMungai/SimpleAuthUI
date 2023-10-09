@@ -13,6 +13,7 @@ import {
   FormMessage,
 } from "../ui/form";
 import { Input } from "../ui/input";
+import { Separator } from "../ui/separator";
 
 type Props = {};
 
@@ -73,6 +74,10 @@ const SignInForm = (props: Props) => {
           />
           <Button type="submit" className="w-full mt-2">
             Sign In
+          </Button>
+          <p className="text-center">Or</p>
+          <Button type="submit" className="w-full mt-2" variant={"outline"}>
+            Sign Up
           </Button>
         </div>
       </form>
