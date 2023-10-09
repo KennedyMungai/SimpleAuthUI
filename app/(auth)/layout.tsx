@@ -1,9 +1,15 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
-type Props = {};
+type Props = {
+  children: ReactNode;
+};
 
-const AuthLayout = (props: Props) => {
-  return <div>AuthLayout</div>;
+const AuthLayout = ({ children }: Props) => {
+  return (
+    <div className="w-[30vw] h-[70vh] flex items-center justify-center">
+      {children}
+    </div>
+  );
 };
 
 export default AuthLayout;
