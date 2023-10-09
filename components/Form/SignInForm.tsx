@@ -27,7 +27,7 @@ const SignInForm = (props: Props) => {
     resolver: zodResolver(FormSchema),
   });
 
-  const onSubmit = () => {
+  const onSubmit = (values: z.infer<typeof FormSchema>) => {
     console.log("form submitted");
   };
 
