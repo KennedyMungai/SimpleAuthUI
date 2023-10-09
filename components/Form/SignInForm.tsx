@@ -17,9 +17,8 @@ import { Input } from "../ui/input";
 type Props = {};
 
 const FormSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
+  email: z.string().email(),
+  password: z.string().min(8),
 });
 
 const SignInForm = (props: Props) => {
@@ -33,19 +32,33 @@ const SignInForm = (props: Props) => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
         <FormField
           control={form.control}
-          name="username"
+          name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input placeholder="shadcn" {...field} />
               </FormControl>
               <FormDescription>
-                This is your public display name.
+                Enter your email address to continue
               </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="password"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Password</FormLabel>
+              <FormControl>
+                <Input placeholder="Password" {...field} type="password" />
+              </FormControl>
+              <FormDescription>Enter your password to continue</FormDescription>
               <FormMessage />
             </FormItem>
           )}
