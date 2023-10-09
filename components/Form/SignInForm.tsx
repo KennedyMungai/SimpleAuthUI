@@ -28,7 +28,7 @@ const SignInForm = (props: Props) => {
   });
 
   const onSubmit = (values: z.infer<typeof FormSchema>) => {
-    console.log("form submitted");
+    console.log(values);
   };
 
   return (
