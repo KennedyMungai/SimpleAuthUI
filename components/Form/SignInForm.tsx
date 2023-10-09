@@ -41,7 +41,7 @@ const SignInForm = (props: Props) => {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="Email" {...field} />
+                  <Input placeholder="Email" {...field} className="bg-white" />
                 </FormControl>
                 <FormDescription>
                   Enter your email address to continue
@@ -57,7 +57,12 @@ const SignInForm = (props: Props) => {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input placeholder="Password" {...field} type="password" />
+                  <Input
+                    placeholder="Password"
+                    {...field}
+                    type="password"
+                    className="bg-white"
+                  />
                 </FormControl>
                 <FormDescription>
                   Enter your password to continue
