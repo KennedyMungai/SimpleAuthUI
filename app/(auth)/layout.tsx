@@ -6,7 +6,7 @@ type Props = {
 
 const AuthLayout = ({ children }: Props) => {
   return (
-    <div className="w-[30vw] h-[70vh] flex items-center justify-center">
+    <div className="w-[40vw] h-[70vh] flex items-center justify-center">
       {children}
     </div>
   );
