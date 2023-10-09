@@ -13,7 +13,7 @@ import {
   FormMessage,
 } from "../ui/form";
 import { Input } from "../ui/input";
-import { Separator } from "../ui/separator";
+import Link from "next/link";
 
 type Props = {};
 
@@ -76,9 +76,11 @@ const SignInForm = (props: Props) => {
             Sign In
           </Button>
           <p className="text-center">Or</p>
-          <Button type="submit" className="w-full mt-2" variant={"outline"}>
-            Sign Up
-          </Button>
+          <Link href="/sign-up">
+            <Button type="submit" className="w-full mt-2" variant={"outline"}>
+              Sign Up
+            </Button>
+          </Link>
         </div>
       </form>
     </Form>
