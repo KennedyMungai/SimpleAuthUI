@@ -17,21 +17,26 @@ import Link from "next/link";
 
 type Props = {};
 
-const FormSchema = z.object({
-  username: z
-    .string()
-    .min(5, "At least 5 characters are required for the username"),
-  email: z
-    .string()
-    .email("Invalid Email")
-    .min(5, "At least 5 characters are required for the email"),
-  password: z
-    .string()
-    .min(8, "The password should not be less than 8 characters"),
-  confirm_password: z
-    .string()
-    .min(8, "The password should not be less than 8 characters"),
-});
+const FormSchema = z
+  .object({
+    username: z
+      .string()
+      .min(5, "At least 5 characters are required for the username"),
+    email: z
+      .string()
+      .email("Invalid Email")
+      .min(5, "At least 5 characters are required for the email"),
+    password: z
+      .string()
+      .min(8, "The password should not be less than 8 characters"),
+    confirm_password: z
+      .string()
+      .min(8, "The password should not be less than 8 characters"),
+  })
+  .refine((data) => data.password === data.confirm_password, {
+    message: "Passwords do not match",
+    path: ["confirm_password"],
+  });
 
 const SignUpForm = (props: Props) => {
   const form = useForm<z.infer<typeof FormSchema>>({
