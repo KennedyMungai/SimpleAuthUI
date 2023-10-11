@@ -25,6 +25,9 @@ const FormSchema = z.object({
   password: z
     .string()
     .min(8, "The password should not be less than 8 characters"),
+  confirm_password: z
+    .string()
+    .min(8, "The password should not be less than 8 characters"),
 });
 
 const SignUpForm = (props: Props) => {
@@ -72,6 +75,27 @@ const SignUpForm = (props: Props) => {
                 </FormControl>
                 <FormDescription>
                   Enter your password to continue
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="confirm_password"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Confirm Password</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Confirm Password"
+                    {...field}
+                    type="password"
+                    className="bg-white"
+                  />
+                </FormControl>
+                <FormDescription>
+                  Confirm Your Password To Continue
                 </FormDescription>
                 <FormMessage />
               </FormItem>
