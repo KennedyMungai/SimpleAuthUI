@@ -18,6 +18,9 @@ import Link from "next/link";
 type Props = {};
 
 const FormSchema = z.object({
+  username: z
+    .string()
+    .min(5, "At least 5 characters are required for the username"),
   email: z
     .string()
     .email("Invalid Email")
@@ -43,6 +46,26 @@ const SignUpForm = (props: Props) => {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
         <div className="space-y-2">
+          <FormField
+            control={form.control}
+            name="username"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Username</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Username"
+                    {...field}
+                    className="bg-white"
+                  />
+                </FormControl>
+                <FormDescription>
+                  Enter your username to continue
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <FormField
             control={form.control}
             name="email"
