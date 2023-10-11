@@ -78,12 +78,12 @@ const SignUpForm = (props: Props) => {
             )}
           />
           <Button type="submit" className="w-full mt-2">
-            Sign In
+            Sign Up
           </Button>
           <p className="text-center">Or</p>
-          <Link href="/sign-up">
+          <Link href="/sign-in">
             <Button type="submit" className="w-full mt-2" variant={"outline"}>
-              Sign Up
+              Sign In
             </Button>
           </Link>
         </div>
